@@ -14,101 +14,142 @@
     }
 
     body {
-        background: #0f0f0f;
-        color: white;
-        line-height: 1.6;
+        background: #0b0b0b;
+        color: #fff;
     }
 
+    /* NAV */
     header {
-        background: black;
-        padding: 20px;
-        border-bottom: 2px solid darkred;
-        position: sticky;
+        position: fixed;
+        width: 100%;
         top: 0;
+        background: rgba(0,0,0,0.9);
+        border-bottom: 1px solid #222;
+        z-index: 1000;
     }
 
     nav {
+        max-width: 1100px;
+        margin: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1100px;
-        margin: auto;
+        padding: 15px 20px;
     }
 
     nav h1 {
-        color: darkred;
-        font-size: 22px;
-        letter-spacing: 1px;
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    nav span {
+        color: #e10600;
     }
 
     nav a {
-        color: white;
+        color: #ccc;
         margin-left: 15px;
         text-decoration: none;
         font-size: 14px;
     }
 
+    nav a:hover {
+        color: white;
+    }
+
+    /* HERO */
     .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        padding: 100px 20px;
-        background: linear-gradient(to bottom, black, #1a0000);
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1") center/cover;
+        padding: 20px;
+    }
+
+    .hero-content {
+        max-width: 700px;
     }
 
     .hero h2 {
-        font-size: 40px;
-        color: darkred;
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    .hero h2 span {
+        color: #e10600;
     }
 
     .hero p {
-        margin-top: 10px;
-        color: #ccc;
+        color: #bbb;
+        margin-bottom: 25px;
     }
 
     .btn {
         display: inline-block;
-        margin-top: 20px;
         padding: 12px 25px;
-        background: darkred;
+        background: #e10600;
         color: white;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: 4px;
+        font-weight: bold;
         transition: 0.3s;
     }
 
     .btn:hover {
-        background: red;
+        background: #ff1a1a;
     }
 
+    /* SECTIONS */
     section {
-        padding: 60px 20px;
+        padding: 80px 20px;
         max-width: 1100px;
         margin: auto;
     }
 
-    h2.section-title {
+    .title {
         text-align: center;
-        margin-bottom: 30px;
-        color: darkred;
+        margin-bottom: 40px;
+        font-size: 28px;
+        color: white;
     }
 
-    .services, .locations {
+    .title span {
+        color: #e10600;
+    }
+
+    /* CARDS */
+    .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
     }
 
     .card {
-        background: #1a1a1a;
+        background: #151515;
         padding: 20px;
-        border-left: 4px solid darkred;
-        border-radius: 5px;
+        border-radius: 6px;
+        border: 1px solid #222;
     }
 
     .card h3 {
         margin-bottom: 10px;
-        color: white;
     }
 
+    .card p {
+        color: #bbb;
+        font-size: 14px;
+    }
+
+    /* LOCATIONS */
+    .location {
+        border-left: 3px solid #e10600;
+        padding-left: 15px;
+    }
+
+    /* GALLERY */
     .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -119,24 +160,26 @@
         width: 100%;
         height: 200px;
         object-fit: cover;
-        border-radius: 5px;
+        border-radius: 6px;
+        filter: brightness(0.9);
     }
 
+    /* FOOTER */
     footer {
         text-align: center;
-        padding: 30px;
-        background: black;
-        border-top: 2px solid darkred;
-        color: #aaa;
+        padding: 40px;
+        color: #777;
+        border-top: 1px solid #222;
     }
-</style>
 
+</style>
 </head>
+
 <body>
 
 <header>
     <nav>
-        <h1>MAIN STREET BARBER SHOP</h1>
+        <h1>MAIN STREET <span>BARBER</span></h1>
         <div>
             <a href="#services">Services</a>
             <a href="#locations">Locations</a>
@@ -146,76 +189,91 @@
     </nav>
 </header>
 
-<section class="hero">
-    <h2>Fresh Cuts. Clean Looks. Real Style.</h2>
-    <p>Modern precision with classic barber tradition.</p>
-    <a class="btn" href="https://mainstreetbarbershop901.resurva.com/book" target="_blank">
-        Book Now
-    </a>
-</section>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <h2>Clean Cuts. <span>Real Style.</span></h2>
+        <p>Modern precision meets classic barber tradition at Main Street Barber Shop.</p>
+        <a class="btn" href="https://mainstreetbarbershop901.resurva.com/book" target="_blank">
+            Book Appointment
+        </a>
+    </div>
+</div>
 
+<!-- SERVICES -->
 <section id="services">
-    <h2 class="section-title">Services</h2>
-    <div class="services">
+    <div class="title">Our <span>Services</span></div>
+    <div class="grid">
+
         <div class="card">
             <h3>Haircut</h3>
-            <p>Clean fades, trims, and styles tailored to you.</p>
+            <p>Fresh fades, clean trims, and sharp styles tailored to you.</p>
         </div>
+
         <div class="card">
             <h3>Beard Trim</h3>
-            <p>Sharp beard shaping and lineup services.</p>
+            <p>Beard shaping and lineup for a clean, sharp finish.</p>
         </div>
+
         <div class="card">
             <h3>Line Up</h3>
-            <p>Precision edges for a fresh finish.</p>
+            <p>Precision edges for a crisp, clean look.</p>
         </div>
+
     </div>
 </section>
 
+<!-- LOCATIONS -->
 <section id="locations">
-    <h2 class="section-title">Locations</h2>
-    <div class="locations">
+    <div class="title">Our <span>Locations</span></div>
 
-        <div class="card">
-            <h3>Main Location (Oswego)</h3>
+    <div class="grid">
+
+        <div class="card location">
+            <h3>Main Location</h3>
             <p>73 Main St, Oswego, IL 60543</p>
-            <p>Tue–Thu: 9:00 AM – 5:30 PM</p>
+            <p>Tue–Thu: 9am–5:30pm</p>
             <p>📞 +1 (630) 853-1907</p>
         </div>
 
-        <div class="card">
-            <h3>Second Location (Downers Grove)</h3>
+        <div class="card location">
+            <h3>Second Location</h3>
             <p>5232 Main St, Downers Grove, IL 60515</p>
-            <p>Mon–Fri: 9:00 AM – 7:00 PM (varies)</p>
-            <p>Sat: 8:00 AM – 3:00 PM | Sun: Closed</p>
+            <p>Mon–Fri: varies</p>
+            <p>Sat: 8am–3pm | Sun: Closed</p>
             <p>📞 +1 (630) 968-8009</p>
         </div>
 
     </div>
 </section>
 
+<!-- GALLERY -->
 <section id="gallery">
-    <h2 class="section-title">Gallery</h2>
+    <div class="title">Our <span>Work</span></div>
+
     <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" />
-        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1" />
-        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937" />
-        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033" />
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033">
     </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-    <h2 class="section-title">Contact</h2>
+    <div class="title">Get <span>Started</span></div>
+
     <div class="card">
-        <p>Call your nearest location or click "Book Now" to schedule an appointment.</p>
+        <p>Book your appointment online or call your nearest location.</p>
+        <br>
         <a class="btn" href="https://mainstreetbarbershop901.resurva.com/book" target="_blank">
-            Book Appointment
+            Book Now
         </a>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Main Street Barber Shop. All rights reserved.</p>
+    © 2026 Main Street Barber Shop — All Rights Reserved
 </footer>
 
 </body>
